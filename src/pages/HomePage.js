@@ -24,7 +24,7 @@ export default function HomePage({ onNavigate, scrollTarget, clearScrollTarget }
         </div>
         <div className="hero-visual">
           <div className="hero-image">
-            <img src={bannerImage} alt="Banner" className="hero-banner" />
+            <img src={bannerImage} alt="Banner" className="hero-banner" fetchpriority="high" />
             <div className="hero-tag">Soluções em SST</div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function HomePage({ onNavigate, scrollTarget, clearScrollTarget }
         {serviceCards.map((card) => (
           <article key={card.title} className="service-card">
             <div className={`service-icon ${card.image ? 'service-image-wrapper' : `icon-${card.icon}`}`}>
-              {card.image ? <img src={card.image} alt={card.title} className="service-card-image" /> : null}
+              {card.image ? <img src={card.image} alt={card.title} className="service-card-image" loading="lazy" /> : null}
             </div>
             <h3>{card.title}</h3>
             <p>{card.description}</p>
@@ -51,7 +51,7 @@ export default function HomePage({ onNavigate, scrollTarget, clearScrollTarget }
         <div className="solution-grid">
           {solutions.map((item) => (
             <article key={item.title} className="solution-card">
-              <img src={item.image} alt={item.title} />
+              <img src={item.image} alt={item.title} loading="lazy" />
               <div className="solution-copy">
                 <h3>{item.title}</h3>
                 <p>{item.subtitle}</p>

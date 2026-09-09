@@ -33,7 +33,7 @@ export default function AboutPage({ onNavigate }) {
             <p>{aboutSection.whoWeAre}</p>
           </div>
           <div className="who-we-are-photo">
-            <img src={aboutWhoWeAreImage} alt="Equipe GN em ação" />
+            <img src={aboutWhoWeAreImage} alt="Equipe GN em ação" loading="lazy" />
           </div>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function AboutPage({ onNavigate }) {
           {serviceCards.map((card) => (
             <article key={card.title} className="service-card service-card-pillars">
               <div className={`service-icon ${card.image ? 'service-image-wrapper' : `icon-${card.icon}`}`}>
-                {card.image ? <img src={card.image} alt={card.title} className="service-card-image" /> : null}
+                {card.image ? <img src={card.image} alt={card.title} className="service-card-image" loading="lazy" /> : null}
               </div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>

@@ -81,7 +81,7 @@ function App() {
       <footer className="footer footer-about-footer">
         <div className="footer-brand">
           <div className="brand-mark footer-mark footer-mark-large">
-            <img src={gnLogoImage} alt="GN Treinamentos e Consultoria" />
+            <img src={gnLogoImage} alt="GN Treinamentos e Consultoria" loading="lazy" />
           </div>
           <p>Consultoria e assessoria em Segurança e Saúde do Trabalho, Engenharia, Treinamentos Normativos, eSocial SST e Meio Ambiente.</p>
         </div>

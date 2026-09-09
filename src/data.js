@@ -1,16 +1,16 @@
-import programasELaudosImg from './images/Programas e Laudos.png';
-import treinamentosNormativosImg from './images/Treinamentos Normativos.png';
-import consultoriaImg from './images/Consultória e Normativa Tecnica.png';
-import projetosTecnicosImg from './images/Projetos Tecnicos.png';
-import eSocialSSTImg from './images/eSocial SST.png';
-import bannerImg from './images/Banner.png';
-import logoImg from './images/logo.png';
-import conformidadeImg from './images/Conformidade.png';
-import segurancaImg from './images/Segurança.png';
-import confiancaImg from './images/confiança.png';
-import sobreImagemImg from './images/sobre-imagem.jpeg';
-import sobreImagem2Img from './images/sobre-imagem2.jpeg';
-import quemSomosImg from './images/quem-somos.jpeg';
+import programasELaudosImg from './images/Programas e Laudos.webp';
+import treinamentosNormativosImg from './images/Treinamentos Normativos.webp';
+import consultoriaImg from './images/Consultoria e Normativa Tecnica.webp';
+import projetosTecnicosImg from './images/Projetos Tecnicos.webp';
+import eSocialSSTImg from './images/eSocial SST.webp';
+import bannerImg from './images/Banner.webp';
+import logoImg from './images/logo.webp';
+import conformidadeImg from './images/Conformidade.webp';
+import segurancaImg from './images/Seguranca.webp';
+import confiancaImg from './images/confianca.webp';
+import sobreImagemImg from './images/sobre-imagem.webp';
+import sobreImagem2Img from './images/sobre-imagem2.webp';
+import quemSomosImg from './images/quem-somos.webp';
 
 export const WHATSAPP_NUMBER = '5591985010707';
 
