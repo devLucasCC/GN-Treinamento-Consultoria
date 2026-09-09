@@ -12,6 +12,12 @@ import sobreImagemImg from './images/sobre-imagem.webp';
 import sobreImagem2Img from './images/sobre-imagem2.webp';
 import quemSomosImg from './images/quem-somos.webp';
 
+// TODO: atualizar para o domínio real assim que o site tiver hospedagem definida.
+// Usado no <link rel="canonical">, nas tags Open Graph/Twitter (public/index.html)
+// e em public/robots.txt e public/sitemap.xml — mantenha os 4 lugares em sincronia.
+export const SITE_URL = 'https://www.gntreinamentoseconsultoria.com.br';
+export const SITE_NAME = 'GN Treinamentos e Consultoria';
+
 export const WHATSAPP_NUMBER = '5591985010707';
 
 const whatsappMessage = encodeURIComponent(
@@ -232,6 +238,38 @@ export const trainingDetails = {
     'NR-33: Espaços confinados e procedimentos de entrada segura.',
     'Treinamento de primeiros socorros e resgate em ambiente industrial.',
   ],
+};
+
+// Título e descrição de cada "página" da SPA, usados por App.js para atualizar
+// document.title e a <meta name="description"> dinamicamente ao navegar.
+// (Como o site não usa roteamento por URL, isso afeta a aba do navegador e
+// leitores de tela, mas não o que rastreadores/crawlers veem — para isso, ver
+// as tags estáticas em public/index.html, que refletem a página inicial.)
+export const pageMeta = {
+  home: {
+    title: 'GN Treinamentos e Consultoria | SST, Laudos e Treinamentos em Belém-PA',
+    description: 'Consultoria em Segurança e Saúde do Trabalho (SST) em Belém-PA: laudos, PGR, PCMSO, treinamentos normativos, eSocial SST e projetos técnicos. Solicite um orçamento.',
+  },
+  sobre: {
+    title: 'Sobre a GN | GN Treinamentos e Consultoria',
+    description: 'Conheça a GN Treinamentos e Consultoria: especialistas em Segurança e Saúde do Trabalho, engenharia e meio ambiente, com atuação em Belém e região.',
+  },
+  servicos: {
+    title: 'Serviços | GN Treinamentos e Consultoria',
+    description: 'Programas e laudos, treinamentos normativos, consultoria técnica, eSocial SST e projetos técnicos para manter sua empresa em conformidade.',
+  },
+  treinamentos: {
+    title: 'Treinamentos Normativos | GN Treinamentos e Consultoria',
+    description: 'Treinamentos NR-06, NR-10, NR-12, NR-18, NR-20, NR-33, NR-35 e outros, presenciais ou in company, para equipes mais seguras e qualificadas.',
+  },
+  esocial: {
+    title: 'eSocial SST | GN Treinamentos e Consultoria',
+    description: 'Suporte técnico para gestão e envio dos eventos de SST no eSocial: S-2210, S-2240, S-2245, S-2250 e outros, com redução de erros e retrabalho.',
+  },
+  quote: {
+    title: 'Solicitar Orçamento | GN Treinamentos e Consultoria',
+    description: 'Solicite uma proposta personalizada em Segurança e Saúde do Trabalho, treinamentos, laudos, consultoria técnica e eSocial SST.',
+  },
 };
 
 export const esocialDetails = {

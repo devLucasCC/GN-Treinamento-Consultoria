@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TODO: domínio placeholder — atualize junto com public/robots.txt e as tags
+  canonical/Open Graph de public/index.html quando o site tiver domínio definido.
+
+  Só existe uma URL aqui porque o site é uma SPA sem roteamento por URL: todas
+  as "páginas" (Sobre, Serviços, Treinamentos, eSocial, Orçamento) trocam de
+  conteúdo por estado do React, sem mudar o endereço, então não há URLs
+  distintas para o Google indexar. Se o roteamento for adicionado (ex:
+  React Router), volte aqui e liste uma <url> para cada rota real.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.gntreinamentoseconsultoria.com.br/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

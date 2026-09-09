@@ -1,0 +1,7 @@
+# TODO: domínio placeholder — atualize junto com public/sitemap.xml e as tags
+# canonical/Open Graph de public/index.html quando o site tiver domínio definido.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gntreinamentoseconsultoria.com.br/sitemap.xml

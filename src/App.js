@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import './App.css';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -6,7 +6,7 @@ import ServicesPage from './pages/ServicesPage';
 import TrainingsPage from './pages/TrainingsPage';
 import ESocialPage from './pages/ESocialPage';
 import QuotePage from './pages/QuotePage';
-import { whatsappLink, instagramLink, linkedinLink, emailLink, gnLogoImage } from './data';
+import { whatsappLink, instagramLink, linkedinLink, emailLink, gnLogoImage, pageMeta } from './data';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -17,6 +17,19 @@ function App() {
     setScrollTarget(target);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Atualiza o título da aba e a meta description a cada navegação interna.
+  // Não afeta o que buscadores/crawlers indexam (o site é uma SPA sem rota por
+  // URL), mas melhora a aba do navegador, o histórico e leitores de tela.
+  useEffect(() => {
+    const meta = pageMeta[currentPage] || pageMeta.home;
+    document.title = meta.title;
+
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    if (descriptionTag) {
+      descriptionTag.setAttribute('content', meta.description);
+    }
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
