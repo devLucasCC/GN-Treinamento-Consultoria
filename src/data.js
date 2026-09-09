@@ -26,7 +26,6 @@ const whatsappMessage = encodeURIComponent(
 
 export const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 export const instagramLink = '#';
-export const linkedinLink = '#';
 export const emailLink = 'mailto:garcianunes.treinamentos@gmail.com';
 export const gnLogoImage = logoImg;
 export const bannerImage = bannerImg;

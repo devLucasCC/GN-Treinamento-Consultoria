@@ -6,7 +6,7 @@ import ServicesPage from './pages/ServicesPage';
 import TrainingsPage from './pages/TrainingsPage';
 import ESocialPage from './pages/ESocialPage';
 import QuotePage from './pages/QuotePage';
-import { whatsappLink, instagramLink, linkedinLink, emailLink, gnLogoImage, pageMeta } from './data';
+import { whatsappLink, instagramLink, emailLink, gnLogoImage, pageMeta } from './data';
 import { initAnalytics, trackPageView } from './analytics';
 
 function App() {
@@ -71,9 +71,6 @@ function App() {
           </a>
           <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram da GN">
             <i className="fab fa-instagram"></i>
-          </a>
-          <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da GN">
-            <i className="fab fa-linkedin-in"></i>
           </a>
         </div>
       </header>
