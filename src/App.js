@@ -7,6 +7,7 @@ import TrainingsPage from './pages/TrainingsPage';
 import ESocialPage from './pages/ESocialPage';
 import QuotePage from './pages/QuotePage';
 import { whatsappLink, instagramLink, linkedinLink, emailLink, gnLogoImage, pageMeta } from './data';
+import { initAnalytics, trackPageView } from './analytics';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -18,9 +19,15 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Atualiza o título da aba e a meta description a cada navegação interna.
-  // Não afeta o que buscadores/crawlers indexam (o site é uma SPA sem rota por
-  // URL), mas melhora a aba do navegador, o histórico e leitores de tela.
+  // Inicializa o GA4 uma única vez (vira no-op se REACT_APP_GA_MEASUREMENT_ID
+  // não estiver definida ou fora de produção — ver src/analytics.js).
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  // Atualiza o título da aba e a meta description a cada navegação interna, e
+  // registra um page_view manual no GA4 (a SPA não muda a URL, então o
+  // page_view automático do gtag não seria disparado nas trocas de "página").
   useEffect(() => {
     const meta = pageMeta[currentPage] || pageMeta.home;
     document.title = meta.title;
@@ -29,6 +36,8 @@ function App() {
     if (descriptionTag) {
       descriptionTag.setAttribute('content', meta.description);
     }
+
+    trackPageView(`/${currentPage === 'home' ? '' : currentPage}`, meta.title);
   }, [currentPage]);
 
   const renderPage = () => {

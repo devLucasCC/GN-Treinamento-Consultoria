@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { WHATSAPP_NUMBER } from '../data';
+import { trackEvent } from '../analytics';
 
 const services = [
   'Programas e Laudos',
@@ -45,6 +46,17 @@ ${formData.mensagem}`;
 
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+    // Evento de conversão: "generate_lead" é o evento recomendado do GA4 para
+    // captação de leads. Marque-o como conversão (key event) no painel do
+    // GA4 em Admin > Eventos. Só enviamos o serviço escolhido (uma opção fixa
+    // do <select>, não texto livre) — nunca nome, WhatsApp ou mensagem, que
+    // são dados pessoais e não devem ir para o GA4.
+    trackEvent('generate_lead', {
+      service: formData.servico,
+      method: 'whatsapp',
+      form_location: 'quote_page',
+    });
 
     window.open(url, '_blank', 'noopener,noreferrer');
   };
