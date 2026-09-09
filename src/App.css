@@ -14,6 +14,12 @@
   --green-light: #86efac;
   --gray-tech: #6b7280;
   --border: #d1d5db;
+  --error: #b91c1c;
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+  --warning: #92400e;
+  --warning-bg: #fffbeb;
+  --warning-border: #fde68a;
 }
 
 * {
@@ -1063,6 +1069,109 @@ nav a:hover {
 
 .form-grid textarea {
   resize: vertical;
+}
+
+.form-grid input.input-error,
+.form-grid select.input-error {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+
+.form-grid input.input-error:focus,
+.form-grid select.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(185, 28, 28, 0.1);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.quote-result {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.quote-result h2 {
+  margin: 0;
+}
+
+.quote-result p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+.quote-result-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.quote-result-icon-success {
+  background: var(--surface-strong);
+  color: var(--green-dark);
+}
+
+.quote-result-icon-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+
+.quote-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.quote-result-blocked {
+  border-color: var(--warning-border);
+  background: var(--warning-bg);
+}
+
+.quote-result-message-label {
+  width: 100%;
+  max-width: 32rem;
+  text-align: left;
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.quote-result-message {
+  width: 100%;
+  border: 1px solid var(--warning-border);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: #ffffff;
+  resize: vertical;
+}
+
+.quote-result-link-back {
+  margin-top: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
 }
 
 .privacy-note {
